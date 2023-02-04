@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+ 
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+ 
+<title>Insert title here</title>
+</head>
+<body>
+<nav th:replace="layouts :: navbar"></nav>
+	<div>
+
+		<h4>Employee Home</h4>
+		<table>
+			<thead>
+				<tr>
+					<th> Firstname   </th>
+					<th> Lastname    </th>
+					<th> Email Add</th>
+				</tr>
+			</thead> 
+
+			<tbody>
+				<tr th:each="employee : ${employee}">
+					<td th:text="${employee.firstname}" />
+					<td th:text="${employee.lastname}" />
+					<td th:text="${employee.email}" />
+
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>
